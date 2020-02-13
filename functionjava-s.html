@@ -1,0 +1,95 @@
+<html>
+
+    <head>
+    
+        <title>Function</title>
+        
+        <style type="text/css">
+            
+            #target {
+                
+                position: relative;
+                width: 200px;
+                height:200px;
+                background-color: red;
+                
+            }
+            
+            #space {
+                
+                width: 2000px;
+                height: 1000px;
+                background-color: greenyellow;
+                
+            }
+        
+        
+        </style>
+        
+    </head>
+
+    <body>
+        
+        <h1>Test Your Reactions!</h1>
+        
+        <p>Click on the boxes and circles quickly as you can!</p>
+        
+        <h3 id="timereturn">Your time:</h3>
+        
+        <div id="space">
+        
+        <p id="target"></p>
+        
+        
+        </div>
+    
+    <script type="text/javascript">
+        
+        
+        function objectappear() {
+            
+            randnumcol = Math.floor(Math.random() * 4)        
+            color = ["red","blue","green","black"];
+            
+            randomleft = String(Math.ceil(Math.random() * 1000)) + 'px';
+            randomtop = String(Math.ceil(Math.random() * 1000)) + 'px';
+            randomradius = String(Math.ceil(Math.random() * 50)) + '%';
+            
+            document.getElementById("target").style.display = "block";
+            document.getElementById("target").style.left = randomleft;
+            document.getElementById("target").style.top = randomtop;
+            document.getElementById("target").style.borderRadius = randomradius;
+            document.getElementById("target").style.backgroundColor = color[randnumcol];
+            
+            
+            
+            
+        }
+        
+        function objectgenerator() { 
+            
+            document.getElementById("target").onclick = function() {
+                
+                
+                document.getElementById("target").style.display = "None";
+                
+                
+                setTimeout(objectappear, 1000);
+                
+                
+            }
+            
+            
+          }
+        
+
+        
+        activate()
+        
+        
+    </script>
+    
+    </body>
+
+
+</html>
